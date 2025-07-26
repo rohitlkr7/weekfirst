@@ -1,0 +1,14 @@
+✅ Key Fixes Explained:
+Problem	Fix Applied
+Overlapping .box elements due to position: absolute and negative margins	Removed position: absolute, used display: flex with gap to space boxes properly
+box-sizing not set	Added box-sizing: border-box globally to ensure padding/border doesn't affect dimensions
+.text positioning awkward (stuck at left 50%, top 0)	Centered horizontally using transform: translateX(-50%), added padding and background
+Responsiveness missing	Used flex-wrap: wrap so boxes wrap on smaller screens
+Visual clarity	Added spacing and better layout structure using margin, padding, and colors
+
+🧪 Final Result:
+Three boxes aligned side-by-side with spacing and wrapping on small screens.
+
+A fixed message bar (.text) neatly centered at the top.
+
+Clean, modern layout without overlapping elements.
