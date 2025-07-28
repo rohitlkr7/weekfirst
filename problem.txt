@@ -1,0 +1,166 @@
+# Problem Statement: **"E-Commerce Product Analytics Pro"**
+
+---
+
+### Objective:
+
+Build a smart analytics dashboard function using **vanilla JavaScript** to process and analyze product data from a public API. This challenge will test your skills in:
+
+- Fetching remote data
+- Using `map`, `filter`, `reduce`, `forEach`, `sort`
+- Method chaining
+- Nested data handling
+- Real-world business logic simulation
+
+---
+
+### API Endpoint:
+
+Fetch data from:
+
+📍 `https://fakestoreapi.com/products`
+
+Each product looks like this:
+
+```json
+{
+  "id": 1,
+  "title": "Fjallraven - Foldsack No. 1 Backpack",
+  "price": 109.95,
+  "category": "men's clothing",
+  "description": "Perfect pack for everyday use and walks in the forest.",
+  "rating": { "rate": 3.9, "count": 120 }
+}
+
+```
+
+---
+
+### Task:
+
+Create a function called `analyzeProducts()` that:
+
+1. **Fetches the product list**
+2. **Returns a final analytics object** with the following insights:
+
+---
+
+### Expected Output Format:
+
+```
+{
+  averagePrice: 62.47,
+  categoryBreakdown: {
+    "electronics": {
+      count: 6,
+      avgPrice: 120.34
+    },
+    "jewelery": {
+      count: 4,
+      avgPrice: 64.99
+    }
+    // ...
+  },
+  topRatedProducts: [
+    { title: "Samsung Monitor 27 inch", rating: 4.9 },
+    { title: "Diamond Ring", rating: 4.8 },
+    ...
+  ],
+  expensiveProducts: [
+    { title: "Apple MacBook", price: 1399.99 },
+    { title: "Gold Watch", price: 899.00 }
+  ],
+  bestValueProduct: {
+    title: "Wireless Mouse",
+    valueScore: 0.055  // (rating.rate / price)
+  },
+  longDescriptions: [
+    "Solid gold plated chain with secure hook closure. Designed for durability and shine.",
+    "This jacket is perfect for winter hikes. With a thermal layer and waterproof zipper."
+  ],
+  mostReviewedCategory: "electronics"
+}
+
+```
+
+---
+
+### What You Need to Compute:
+
+### 1. **Average Price** (Global)
+
+- Use `reduce()` + `map()` + method chaining.
+- Return with 2 decimal places (`parseFloat(toFixed(2))`)
+
+---
+
+### 2. **Category Breakdown**
+
+Return an object with category keys:
+
+- Each value includes:
+    - Total count
+    - Average price (rounded to 2 decimals)
+
+Hint:
+
+```
+{
+  "electronics": { count: 6, avgPrice: 120.34 },
+  ...
+}
+
+```
+
+---
+
+### 3. **Top Rated Products**
+
+- Return the **top 5 products** with the highest `rating.rate`
+- Each should have `title` and `rating`
+
+---
+
+### 4. **Expensive Products**
+
+- Return **all products priced above ₹500**
+- Each should have `title` and `price`
+- Use `.filter()` and `.map()` chained together
+
+---
+
+### 5. **Best Value Product**
+
+- Calculate a custom metric: `rating.rate / price`
+- Return the product with the **highest valueScore**
+- Output only `title` and `valueScore`
+
+---
+
+### 6. **Long Descriptions**
+
+- Return an array of **description strings** with length > 100 characters
+- Use method chaining: `.filter().map()`
+
+---
+
+### 7. **Most Reviewed Category**
+
+- Use `reduce()` to calculate total `rating.count` per category
+- Return the category with the **highest total number of reviews**
+
+---
+
+### Constraints:
+
+- Use only **vanilla JS** and `fetch` (no lodash, no axios, etc.)
+- Must use:
+    - `map`
+    - `reduce`
+    - `forEach`
+    - `filter`
+    - `sort`
+    - Method chaining
+- Use `async/await` syntax
+- No DOM manipulation required (pure function returning object)
+- Do **not mutate original API data**
