@@ -5,7 +5,7 @@
 // }
 // fetchData();
 
-
+// fetc product from fakestore api
 async function fetchProducts(){
    
    try {
