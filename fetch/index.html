@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <select name="" id="categoryFilter" onchange="filterByCategory()">
+        <option value="all">All</option>
+        <option value="men's clothing">men's clothing</option>
+        <option value="jewelery">jewelery</option>
+        <option value="electronics">electronics</option>
+      </select>
+      <div id="filteredProductContainer">
+        <h1>Filter_product</h1>
+      </div>
+    </div>
+
+
+
+    <div id="productContainer">
+      <h2>All Product</h2>
+      <button id="btn" onclick="fetchProducts()">Data fetched</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
